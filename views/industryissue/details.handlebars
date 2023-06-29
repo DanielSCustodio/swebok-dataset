@@ -1,0 +1,79 @@
+<section class="container-form-view">
+  <div class="container-form-view-item">
+      <h1 class="title">Issue - {{industryIssue.Description}}</h1>
+      <div>
+        <form action="/industryissue/edit/{{industryIssue.id}}" class="form">
+          <input type="submit" value="Edit" class="btn edit-btn">
+        </form>
+        <form action="/industryissue/download-pdf/{{industryIssue.id}}" class="form ">
+          <input type="submit" value="Export" class="btn export">
+        </form>
+      </div>
+  </div>
+  <form class="form" >
+    <div class="form-control">
+      <label>Swebok Area:</label>
+      <input type="text" value="{{chapter.Description}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>Topic:</label>
+      <input type="text" value="{{topic.Description}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>Question:</label>
+      <input type="text" value="{{industryIssue.Question}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>Type:</label>
+      <input type="text" value="{{industryIssue.Type}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>Description:</label>
+      <input type="text" value="{{industryIssue.Description}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>Claiment:</label>
+      <input type="text" value="{{industryIssue.Claiment}}" disabled />
+    </div>
+    <div class="form-control">
+      <label>File:</label>
+      <input type="text" value="{{industryIssue.File}}" disabled />
+    </div>
+  </form>
+</section>
+
+<div class="container-form-view">
+  <div class="container-form-view-item">
+    <h2 class="title">Evidence</h2>
+    <a href="/issueevidence/add/{{industryIssue.id}}" class="btn">Add New Evidence</a>
+  </div>
+  </form>
+  {{#if industryIssue.Issue_Evidences}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Annotation</th>
+          <th>View</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each industryIssue.Issue_Evidences}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>{{this.Annotation}}</td>
+            <td><a href="/evidence/{{this.EvidenceId}}"><i
+                  class="bi bi-search"
+                ></i></a></td>
+            <td><a href="/evidence/edit/{{this.EvidenceId}}"><i
+                  class="bi bi-pen"
+                ></i></a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>

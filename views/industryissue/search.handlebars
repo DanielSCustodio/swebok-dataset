@@ -1,0 +1,65 @@
+<section class='default-container'>
+  <h1 class='title'>Search Industry Issue</h1>
+  <div class='container-search container-search-center'>
+    <form action='/industryissue/search' class='form' method='POST'>
+      <div class='form-control'>
+        <label>Swebok Area:</label>
+        <input type='text' name='area' />
+      </div>
+      <div class='form-control'>
+        <label>Topic:</label>
+        <input type='text' name='topic' />
+      </div>  
+      <div class='form-control'>
+        <label>Type:</label>
+        <input type='text' name='type' />
+      </div>
+      <div class='form-control'>
+        <label>Question:</label>
+        <input type='text' name='question' />
+      </div>
+      <input type='submit' value='Search' class='btn' />
+    </form>
+  </div>
+  <div class='default-container-item'>
+    <div class='default-container-buttons'>
+      {{#if industryIssue}}
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Type</th>
+              <th>Question</th>
+              <th>Description</th>
+              <th>File</th>
+              <th>Claiment</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each industryIssue}}
+              <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.Type}}</td>
+                <td>{{this.Question}}</td>
+                <td>{{this.Description}}</td>
+                <td>{{this.File}}</td>
+                <td>{{this.Claiment}}</td>
+                <td><a href='/industryissue/{{this.id}}'><i
+                      class='bi bi-search'
+                    ></i></a></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
+    </div>
+
+  </div>
+  {{#if industryIssue}}
+    <a href='/industryissue/search' class='btn'>Clear</a>
+  {{/if}}
+  {{#if notFound}}
+    <h6 class='title'>No Results</h6>
+  {{/if}}
+</section>

@@ -1,0 +1,17 @@
+@use '../base/variables'
+@use '../layouts/mixins'
+
+
+.title
+  font-size: 1.5rem
+  margin: 0
+  font-weight: 700
+  margin-bottom: 2rem
+  text-transform: capitalize
+
+.title-pages
+  @include mixins.center-content()
+  padding-top: variables.$top-distance
+  font-size: 2rem
+  color: variables.$text-color
+  margin-bottom: 2rem 

@@ -1,0 +1,39 @@
+<section class='container-form-view'>
+  <h1 class='title'>Evidence Edit - {{evidence.Title}}</h1>
+  <form class='form' action='/evidence/update' method='POST'>
+    <input type='hidden' name='id' value={{evidence.id}} />
+    <div class='form-control'>
+      <label>Description:</label>
+      <input type='text'  name="Description" value='{{evidence.Description}}' />
+    </div>
+    <div class='form-control'>
+      <label>Title:</label>
+      <input type='text' name="Title" value='{{evidence.Title}}' />
+    </div>
+    <div class='form-control'>
+      <label>Authors:</label>
+      <input type='text' name="Authors" value='{{evidence.Authors}}' />
+    </div>
+    <div class='form-control'>
+      <label>Abstract:</label>
+      <input type='text' name="Abstract" value='{{evidence.Abstract}}' />
+    </div>
+    <div class='form-control'>
+      <label>KeyWords:</label>
+      <input type='text' name="KeyWords" value='{{evidence.KeyWords}}' />
+    </div>
+    <div class='form-control'>
+      <label>DOINnumber:</label>
+      <input type='text' name="DOINnumber" value='{{evidence.DOINnumber}}' />
+    </div>
+    <div class='form-control'>
+      <label>Link:</label>
+      <input type='text' name="Link" value='{{evidence.Link}}' />
+    </div>
+    <div class='form-control'>
+      <label>File:</label>
+      <input type='text' name="File" value='{{evidence.File}}' />
+    </div>
+    <input type="submit" value="Edit" class="btn">
+  </form>
+</section>

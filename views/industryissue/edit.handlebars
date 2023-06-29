@@ -1,0 +1,49 @@
+<section class="container-form-view">
+  <h1 class="title">Edit Issue - {{industryIssue.Description}}</h1>
+  <form  class='form' action='/industryissue/update' method='POST'>
+    <input type="hidden" name="id" value="{{industryIssue.id}}">
+    <div class="form-control">
+      <label>Swebok Area:</label>
+      <select name="chapterSelect">
+        <option selected>{{chapterSelect.Description}}</option>
+        {{#each chpaterFilter}}
+          <option value="{{this.Description}}">{{this.Description}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-control">
+      <label>Topic:</label>
+      <select name="topicSelect">
+        <option selected>{{topicSelect.Description}}</option>
+        {{#each topicFilter}}
+          <option value="{{this.Description}}">{{this.Description}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-control">
+      <label>Question:</label>
+      <input type="text" value="{{industryIssue.Question}}" name="Question" />
+    </div>
+    <div class="form-control">
+      <label>Type:</label>
+      <input type="text" value="{{industryIssue.Type}}" name="Type" />
+    </div>
+    <div class="form-control">
+      <label>Description:</label>
+      <input
+        type="text"
+        value="{{industryIssue.Description}}"
+        name="Description"
+      />
+    </div>
+    <div class="form-control">
+      <label>Claiment:</label>
+      <input type="text" value="{{industryIssue.Claiment}}" name="Claiment" />
+    </div>
+    <div class="form-control">
+      <label>File:</label>
+      <input type="text" value="{{industryIssue.File}}" name="File" />
+    </div>
+    <input type="submit" value="Edit" class="btn" />
+  </form>
+</section>

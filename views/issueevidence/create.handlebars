@@ -1,0 +1,24 @@
+<section class='default-container'>
+<div class="container-form-view-evidence">
+  <h2 class="title">Add New Evidence - {{issue.Description}}</h2>
+  <form action="/issueevidence/add/:id" class="form" method="POST">
+    <input type="hidden" name="IndustryIssueId" value="{{issue.id}}" />
+    <div class="form-control">
+      <label>Annotation</label>
+      <input type="text" name="Annotation" placeholder="Annotation" />
+    </div>
+    <div class="form-control">
+      <label>File</label>
+      <input type="text" name="File" placeholder="File" />
+    </div>
+    <div class="form-control">
+      <label>Evidence</label>
+      <select name="evidenceSelect">
+        {{#each evidence}}
+          <option value="{{this.Title}}">{{this.Title}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <input type="submit" value="Add" class="btn" />
+</div>
+</section>

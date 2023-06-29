@@ -1,0 +1,29 @@
+<section class="default-container">
+  <div class="default-container-item">
+    <h1 class="title">Swebok v3.0 Guide</h1>
+    <a href="/industryissue/search">Seacrh</a>
+  </div>
+
+  <div class="default-container-buttons">
+    <a href="/evidence" class="btn">Evidence</a>
+    <a href="/industryissue/add" class="btn">New Issue</a>
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Chapter</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each chapters}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.Description}}</td>
+      <td><a href="/swebokchapter/{{this.id}}"><i class="bi bi-search"></i></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</section>

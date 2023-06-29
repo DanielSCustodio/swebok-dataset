@@ -1,0 +1,42 @@
+<section class="container-form-view">
+  <h1 class="title">Create Issue</h1>
+  <form class="form" method="POST" action="/industryissue/add" >
+    <div class="form-control">
+      <label>Swebok Area:</label>
+      <select name="chapterSelect">
+        {{#each chapter}}
+          <option value="{{this.Description}}">{{this.Description}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-control">
+      <label>Topic:</label>
+      <select name="topicSelect">
+        {{#each topic}}
+          <option value="{{this.Description}}">{{this.Description}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-control">
+      <label>Question:</label>
+      <input type="text" name="Question" placeholder="Create Question"/>
+    </div>
+    <div class="form-control">
+      <label>Type:</label>
+      <input type="text" name="Type" placeholder="Create Type"/>
+    </div>
+    <div class="form-control">
+      <label>Description:</label>
+      <input type="text" name="Description" placeholder="Create Description"/>
+    </div>
+    <div class="form-control">
+      <label>Claiment:</label>
+      <input type="text" name="Claiment" placeholder="Create Claiment"/>
+    </div>
+    <div class="form-control">
+      <label>File:</label>
+      <input type="text" name="File" placeholder="Create File"/>
+    </div>
+    <input type="submit" value="Create" class="btn">
+  </form>
+</section>
