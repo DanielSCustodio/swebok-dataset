@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <h1>SWEBOK Dataset</h1>
-  <p>Bem-vindo ao projeto SWEBOK Dataset! Este projeto foi desenvolvido para facilitar a gestão e colaboração em questões relacionadas ao Corpo de Conhecimento em Engenharia de Software (SWEBOK).</p>
+  <h1>Scientific Evidence Dataset</h1>
+ <img src="https://github.com/DanielSCustodio/swebok-dataset/assets/29557187/d71c4d32-d97c-4933-955d-029b47f910fc">
+
+  <p>Bem-vindo ao projeto Scientific Evidence Dataset! Este projeto foi desenvolvido para facilitar a gestão e colaboração em questões relacionadas ao Corpo de Conhecimento em Engenharia de Software (SWEBOK).</p>
   <h2>Visão Geral</h2>
-  <p>O projeto SWEBOK Dataset tem como objetivo fornecer uma plataforma centralizada para rastrear e abordar várias questões e tópicos dentro do framework SWEBOK. Ele permite que os usuários:</p>
+  <p>O projetoScientific Evidence Dataset tem como objetivo fornecer uma plataforma centralizada para rastrear e abordar várias questões e tópicos dentro do framework SWEBOK. Ele permite que os usuários:</p>
   <ul>
     <li>Crie e gerencie questões relacionadas a tópicos específicos do SWEBoK.</li>
     <li>Anexe e revise evidências para apoiar as questões identificadas.</li>
