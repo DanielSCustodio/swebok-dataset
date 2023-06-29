@@ -11,13 +11,13 @@
   <h2>Visão Geral</h2>
   <p>O projetoScientific Evidence Dataset tem como objetivo fornecer uma plataforma centralizada para rastrear e abordar várias questões e tópicos dentro do framework SWEBOK. Ele permite que os usuários:</p>
   <ul>
-    <li>Crie e gerencie questões relacionadas a tópicos específicos do SWEBoK.</li>
+    <li>Crie e gerencie questões relacionadas a tópicos específicos do SWEBOK.</li>
     <li>Anexe e revise evidências para apoiar as questões identificadas.</li>
   </ul>
   <h2>Guia de Instalação</h2>
   <ol>
     <li>Clone este repositório usando o comando   <pre><code> git clone git@github.com:DanielSCustodio/swebok-dataset.git</code></pre></li>
-    <li>Importe o arquivo <code>swebok.sql</code> (que se encontra na raiz projeto) para o seu banco de dados MySQL. Esse arquivo contém a estrutura de tabelas necessárias para o funcionamento do projeto.</li>
+    <li>Importe o arquivo <code>swebok.sql</code> (que se encontra na raiz projeto) para um banco de dados vazio. Esse arquivo contém a estrutura de tabelas necessárias para o funcionamento do projeto.</li>
     <li>Crie um arquivo chamado  <code>.env.development.local </code> na raiz do projeto e adicione as seguintes informações de conexão do banco de dados, substituindo os valores xxx pelos dados corretos:</li>
     <pre><code>DB_PASS=xxx
 DB_HOST=localhost
