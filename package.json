@@ -1,0 +1,29 @@
+{
+  "name": "sed",
+  "version": "1.0.0",
+  "description": "sed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "custom-env": "^2.0.2",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "mysql2": "^3.3.1",
+    "nodemon": "^2.0.22",
+    "puppeteer": "^20.7.3",
+    "sass": "^1.63.6",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
+  }
+}

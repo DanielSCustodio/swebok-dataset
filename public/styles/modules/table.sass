@@ -1,0 +1,33 @@
+@use '../base/variables'
+@use '../layouts/mixins'
+@use '../base/base-mixins'
+
+.table
+  max-width: variables.$container-width
+  width: 100%
+  border-collapse: collapse
+  border-bottom: 1px solid variables.$border-color
+
+  th, td
+    padding: 1rem
+    text-align: justify
+
+  th
+    background-color: variables.$bg-second-color
+    color: variables.$primary-color
+    
+
+  tr:nth-child(odd)
+    background-color: variables.$table-bg-color
+
+  tr:nth-child(even)
+    background-color: variables.$bg-second-color
+
+
+
+  i
+    transition: .8s
+    margin-left: 1.2rem
+    &:hover
+      cursor: pointer
+      color: variables.$primary-color

@@ -1,0 +1,33 @@
+@use '../base/variables'
+@use '../layouts/mixins'
+@use '../base/base-mixins'
+
+
+.default-container
+  @include mixins.center-content()
+  flex-direction: column
+
+  &-item
+    width: 100%
+    margin: 0 auto
+    display: flex
+    align-items:  baseline
+    justify-content: space-between
+
+  &-buttons
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 3rem
+    gap: 1rem
+
+.container-view
+  @include mixins.center-content()
+
+.container-topic
+  @include mixins.center-content()
+  flex-direction: column
+
+.container-topic-list
+  @include mixins.center-content()
+  padding-top: 0

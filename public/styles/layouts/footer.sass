@@ -1,0 +1,39 @@
+@use '../base/variables'
+@use './mixins'
+@use '../base/base-mixins'
+
+#footer
+  background-color: variables.$second-color
+  padding: 2rem 0
+  margin-top: variables.$top-distance
+  
+  .container-footer
+    @include mixins.center-content()
+    padding-top: 0
+    img
+      height: 80px
+    
+    h6,p,span
+      color: variables.$second-text-color
+      margin: 0
+
+    h6,span
+      font-weight: 200
+      letter-spacing: 0.8rem
+
+    div
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+    .social-network
+      flex-direction: row
+
+      i
+        font-size: 1.5rem
+        color: variables.$second-text-color
+        transition: .8s
+
+      i:hover
+        color: #ffffffa5

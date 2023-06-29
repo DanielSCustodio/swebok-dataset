@@ -1,0 +1,28 @@
+<section class='container-view'>
+  <div>
+    <h1 class='title'>{{chapter.Description}}</h1>
+    <h2 class='title'>{{topic.id}}.{{topic.Description}}</h2>
+  </div>
+</section>
+<section class='container-topic-list'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Issues</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each topic.Industry_Issues}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.Description}}</td>
+          <td><a href='/industryissue/{{this.id}}'><i
+                class='bi bi-search'
+              ></i></a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
