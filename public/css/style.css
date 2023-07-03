@@ -183,16 +183,8 @@ ul {
 }
 
 .title-pages {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-  padding-top: 10%;
   font-size: 2rem;
   color: #3d4040;
-  margin-bottom: 2rem;
 }
 
 .btn {
@@ -349,6 +341,27 @@ ul {
   align-items: center;
   padding: 0 1rem;
   padding-top: 0;
+}
+
+.default-container-title {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  padding-top: 10%;
+  margin-bottom: 2rem;
+}
+.default-container-title button {
+  color: #429df2;
+  border: 0;
+  background: none;
+  transition: 0.8s;
+}
+.default-container-title button:hover {
+  cursor: pointer;
+  color: #3d4040;
 }
 
 .container-search {

@@ -31,3 +31,20 @@
 .container-topic-list
   @include mixins.center-content()
   padding-top: 0
+
+.default-container-title 
+  @include mixins.center-content()
+  padding-top: variables.$top-distance
+  margin-bottom: 2rem 
+
+  button
+    color: variables.$primary-color
+    border: 0
+    background: none
+    transition: .8s
+
+    &:hover
+      cursor: pointer
+      color: variables.$text-color
+
+
