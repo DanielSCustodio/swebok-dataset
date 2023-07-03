@@ -35,7 +35,7 @@ CREATE TABLE `Evidence` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `Evidence` (
 
 LOCK TABLES `Evidence` WRITE;
 /*!40000 ALTER TABLE `Evidence` DISABLE KEYS */;
+INSERT INTO `Evidence` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01','Teste 01','Teste 01','Teste 01',_binary 'Teste 01','2023-07-01 19:32:49','2023-07-01 19:32:49');
 /*!40000 ALTER TABLE `Evidence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +71,7 @@ CREATE TABLE `Industry_Issues` (
   KEY `SwebokTopicId` (`SwebokTopicId`),
   CONSTRAINT `Industry_Issues_ibfk_1` FOREIGN KEY (`SwebokChapterId`) REFERENCES `Swebok_Chapters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Industry_Issues_ibfk_2` FOREIGN KEY (`SwebokTopicId`) REFERENCES `Swebok_Topics` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,6 +80,7 @@ CREATE TABLE `Industry_Issues` (
 
 LOCK TABLES `Industry_Issues` WRITE;
 /*!40000 ALTER TABLE `Industry_Issues` DISABLE KEYS */;
+INSERT INTO `Industry_Issues` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01s','Teste 01',2,'2023-07-01 19:31:57','2023-07-01 19:34:28',9),(2,'Teste 02','Teste 02',_binary 'Teste 02',_binary 'Teste 02','Teste 02',1,'2023-07-01 19:52:02','2023-07-01 19:52:02',2);
 /*!40000 ALTER TABLE `Industry_Issues` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +95,7 @@ CREATE TABLE `Issue_Evidences` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Annotation` blob,
   `File` blob,
-  `createdAt` datetime NOT NULL,
+  `createdAt` date NOT NULL,
   `updatedAt` datetime NOT NULL,
   `IndustryIssueId` int DEFAULT NULL,
   `EvidenceId` int DEFAULT NULL,
@@ -102,7 +104,7 @@ CREATE TABLE `Issue_Evidences` (
   KEY `EvidenceId` (`EvidenceId`),
   CONSTRAINT `Issue_Evidences_ibfk_1` FOREIGN KEY (`IndustryIssueId`) REFERENCES `Industry_Issues` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `Issue_Evidences_ibfk_2` FOREIGN KEY (`EvidenceId`) REFERENCES `Evidence` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +113,7 @@ CREATE TABLE `Issue_Evidences` (
 
 LOCK TABLES `Issue_Evidences` WRITE;
 /*!40000 ALTER TABLE `Issue_Evidences` DISABLE KEYS */;
+INSERT INTO `Issue_Evidences` VALUES (1,_binary 'Teste 01',_binary 'Teste 01','2023-07-01','2023-07-01 19:34:14',1,1),(2,_binary 'Teste 02',_binary 'Teste 02','2023-07-01','2023-07-01 19:52:12',2,1);
 /*!40000 ALTER TABLE `Issue_Evidences` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-01 16:31:11
+-- Dump completed on 2023-07-03 12:44:57

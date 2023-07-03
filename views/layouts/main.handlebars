@@ -24,7 +24,10 @@
       </div>
     </nav>
     <div class='container-body'>
-      <h2 class="title-pages">Scientific Evidence Dataset</h2>
+      <div class="default-container-title">
+        <h2 class="title-pages">Scientific Evidence Dataset</h2>
+        <button onclick="goBack()" >Go Back</button>
+      </div>
       {{{body}}}
     </div>
     <footer id="footer">
@@ -38,3 +41,9 @@
     </footer>
   </body>
 </html>
+
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
