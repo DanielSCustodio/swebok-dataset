@@ -136,11 +136,13 @@ module.exports = class IndustryIssueController {
         const editButton = document.querySelector(".edit-btn");
         const navbar = document.querySelector("#nav-bar");
         const footer = document.querySelector("#footer");
+        const addNewEvidenceButton = document.querySelector("#add-new-evidence");
 
         exportButton.parentNode.removeChild(exportButton);
         navbar.parentNode.removeChild(navbar);
         footer.parentNode.removeChild(footer);
         editButton.parentNode.removeChild(editButton);
+        addNewEvidenceButton.parentNode.removeChild(addNewEvidenceButton);
       });
 
       const pdfOptions = {
