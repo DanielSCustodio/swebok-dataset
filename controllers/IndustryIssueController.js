@@ -7,7 +7,7 @@ const puppeteer = require("puppeteer");
 const { Op } = require("sequelize");
 
 module.exports = class IndustryIssueController {
-  static async createIndustryIssue(req, res) {
+  static async createIndustryIssue(_req, res) {
     const chapter = await SwebokChpater.findAll({ raw: true });
     const topic = await SwebokTopic.findAll({ raw: true });
     res.render("industryissue/create", { chapter, topic });
@@ -48,7 +48,6 @@ module.exports = class IndustryIssueController {
     await IndustryIssue.create(issue);
     res.redirect(`/industryissue/${id}`);
   }
-
   static async viewIndustryIssue(req, res) {
     const { id } = req.params;
 
@@ -76,7 +75,7 @@ module.exports = class IndustryIssueController {
       evidence,
     });
   }
-  static viewSearch(req, res) {
+  static viewSearch(_req, res) {
     res.render("industryissue/search");
   }
   static async searchIndustryIssue(req, res) {
@@ -137,17 +136,18 @@ module.exports = class IndustryIssueController {
         const navbar = document.querySelector("#nav-bar");
         const footer = document.querySelector("#footer");
         const addNewEvidenceButton = document.querySelector("#add-new-evidence");
+        const backButton = document.querySelector("#back");
 
         exportButton.parentNode.removeChild(exportButton);
         navbar.parentNode.removeChild(navbar);
         footer.parentNode.removeChild(footer);
         editButton.parentNode.removeChild(editButton);
         addNewEvidenceButton.parentNode.removeChild(addNewEvidenceButton);
+        backButton.parentNode.removeChild(backButton);
       });
 
       const pdfOptions = {
         format: "A4",
-        printBackground: true,
       };
 
       const pdfBuffer = await page.pdf(pdfOptions);

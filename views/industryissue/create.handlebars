@@ -1,5 +1,8 @@
 <section class="container-form-view">
   <h1 class="title">Create Issue</h1>
+  {{#if alert}}
+    <h2 class="title alert">Area and topic are not compatible.</h2>
+  {{/if}}
   <form class="form" method="POST" action="/industryissue/add" >
     <div class="form-control">
       <label>Swebok Area:</label>
