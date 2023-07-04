@@ -187,6 +187,12 @@ ul {
   color: #3d4040;
 }
 
+.alert {
+  color: #df3812;
+  text-transform: none;
+  font-weight: 400;
+}
+
 .btn {
   padding: 0.8rem 2rem;
   margin-top: 1rem;
