@@ -27,6 +27,7 @@ PORT=xxx</code></pre>
     <li>Execute o comando <code>npm install</code> para instalar todas as dependências necessárias do projeto.</li>
     <li>Execute o comando <code>sass --watch styles/main.sass:public/css/style.css</code> para compilar o SASS em tempo real.</li>
     <li>Finalmente, execute o comando <code>npm start</code> para iniciar o servidor. O aplicativo estará disponível em <code>http://localhost:PORT/</code>, onde <code>PORT</code> é a porta especificada no arquivo <code>.env.development.local</code>.</li>
+    <li>Para apagar todos os dados do banco de dados, retire o comentário da linha <code>12</code> até linha <code>15</code> e também o comentário da linha <code>55</code>. Em seguida salve o arquivo.</li>
   </ol>
 
   <h2>Contribuindo</h2>
