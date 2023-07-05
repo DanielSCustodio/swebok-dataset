@@ -1,5 +1,7 @@
 const SwebokChpater = require("../models/SwebokChapter");
 const SwebokTopic = require("../models/SwebokTopic");
+const Evidence = require("../models/Evidence");
+
 
 module.exports.checkTopic = async function (req, res, next) {
   const { chapterSelect, topicSelect } = req.body;
@@ -23,7 +25,7 @@ module.exports.checkTopic = async function (req, res, next) {
   next();
 };
 
-module.exports.checkSearch = async function (req, res, next) {
+module.exports.checkIssueSearch = async function (req, res, next) {
   const { type, question, area, topic } = req.body;
 
   const message = "Minimum of 3 characters required.";
@@ -55,3 +57,15 @@ module.exports.checkSearch = async function (req, res, next) {
 
   next();
 };
+
+module.exports.checkEvidenceSearch= async function(req, res, next){
+  const { search } = req.body;
+  const evidence = await Evidence.findAll({ raw: true });
+  const message = "Minimum of 3 characters required.";
+
+  if (search.length <= 2) {
+    let checkSearch = message;
+    return res.render("evidence/dashboard", { checkSearch, evidence });
+  }
+  next();
+}

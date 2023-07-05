@@ -1,21 +1,22 @@
-<section class='default-container'>
+<section class="default-container">
   <h1 class="title">Evidence</h1>
-  <div class='default-container-item'>
-    <div class='container-search'>
-      <form action='/evidence' method='POST'>
-        <input type='text' name='search' placeholder='Title...' />
-        <input type='submit' value='Search' class='btn' />
+  <div class="default-container-item">
+    <div class="container-search">
+      <form action="/evidence" method="POST">
+        <input type="text" name="search" placeholder="Title..." />
+        <input type="submit" value="Search" class="btn" />
       </form>
+      <span class="alert">{{checkSearch}}</span>
     </div>
-    <div class='default-container-buttons'>
+    <div class="default-container-buttons">
       {{#if all}}
-        <a href='/evidence' class='btn'>All</a>
+        <a href="/evidence" class="btn">All</a>
       {{/if}}
-      <a href='/evidence/add' class='btn'>Add New Evidence</a>
+      <a href="/evidence/add" class="btn">Add New Evidence</a>
     </div>
   </div>
   {{#if evidence}}
-    <table class='table'>
+    <table class="table">
       <thead>
         <tr>
           <th>ID</th>
@@ -43,17 +44,19 @@
             <td>{{this.DOINnumber}}</td>
             <td>{{this.Link}}</td>
             <td>{{this.File}}</td>
-            <td><a href='/evidence/{{this.id}}'><i
-                  class='bi bi-search'
+            <td><a href="/evidence/{{this.id}}"><i
+                  class="bi bi-search"
                 ></i></a></td>
-            <td><a href='/evidence/edit/{{this.id}}'><i
-                  class='bi bi-pen'
+            <td><a href="/evidence/edit/{{this.id}}"><i
+                  class="bi bi-pen"
                 ></i></a></td>
           </tr>
         {{/each}}
       </tbody>
     </table>
-    {{else}}
-    <h6 class="title">No Results</h6>
+  {{else}}
+    {{#unless checkSearch}}
+        <h6 class="title">No Results</h6>
+    {{/unless}}
   {{/if}}
 </section>
