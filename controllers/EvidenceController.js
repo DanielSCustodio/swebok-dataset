@@ -1,15 +1,15 @@
-const Evidence = require('../models/Evidence');
-const { Op } = require('sequelize');
+const Evidence = require("../models/Evidence");
+const { Op } = require("sequelize");
 
 module.exports = class EvidenceController {
   static createEvidence(req, res) {
-    res.render('evidence/create');
+    res.render("evidence/create");
   }
 
   static async dashboard(req, res) {
     const evidence = await Evidence.findAll({ raw: true });
 
-    res.render('evidence/dashboard', { evidence });
+    res.render("evidence/dashboard", { evidence });
   }
 
   static async createEvidenceSave(req, res) {
@@ -35,7 +35,7 @@ module.exports = class EvidenceController {
       File,
     };
     await Evidence.create(evidence);
-    res.redirect('/evidence');
+    res.redirect("/evidence");
   }
 
   static async viewEvidence(req, res) {
@@ -44,7 +44,7 @@ module.exports = class EvidenceController {
       where: { id: id },
       raw: true,
     });
-    res.render('evidence/details', {
+    res.render("evidence/details", {
       evidence,
     });
   }
@@ -52,7 +52,7 @@ module.exports = class EvidenceController {
   static async editEvidence(req, res) {
     const { id } = req.params;
     const evidence = await Evidence.findOne({ raw: true, where: { id: id } });
-    res.render('evidence/edit', { evidence });
+    res.render("evidence/edit", { evidence });
   }
 
   static async updateEvidenceSave(req, res) {
@@ -81,7 +81,7 @@ module.exports = class EvidenceController {
     };
 
     await Evidence.update(evidence, { where: { id: id } });
-    res.redirect('/evidence');
+    res.redirect("/evidence");
   }
 
   static async searchEvidence(req, res) {
@@ -95,6 +95,6 @@ module.exports = class EvidenceController {
         },
       },
     });
-    res.render('evidence/dashboard', { evidence, all });
+    res.render("evidence/dashboard", { evidence, all });
   }
 };
