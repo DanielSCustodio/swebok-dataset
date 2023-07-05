@@ -8,8 +8,8 @@ const app = express();
 const connection = require('./db/connection');
 
 //Models
-const SwebokChapter = require('./models/SwebokChapter'); /* 
-const SwebokTopic = require('./models/SwebokTopic');
+const SwebokChapter = require('./models/SwebokChapter'); 
+/* const SwebokTopic = require('./models/SwebokTopic');
 const IndustryIssue = require('./models/IndustryIssue');
 const IssueEvidence = require('./models/IssueEvidence');
 const Evidence = require('./models/Evidence'); */
@@ -52,7 +52,7 @@ app.get('/', async (req, res) => {
   res.render('swebokchapter/dashboard', { chapters });
 });
 
-connection.sync(/* { force: true } */).then(() => {
+connection.sync(/* { force: true } */ ).then(() => {
   app.listen(process.env.PORT, 'localhost',() => {
     console.log(`Aplicação em execução na porta ${process.env.PORT}`);
   });

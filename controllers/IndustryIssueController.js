@@ -109,8 +109,6 @@ module.exports = class IndustryIssueController {
         Question: {
           [Op.like]: `%${question}%`,
         },
-        /*       SwebokChapterId: swebokArea.id,
-        SwebokTopicId: swebokTopic.id, */
       },
     });
 
@@ -201,7 +199,6 @@ module.exports = class IndustryIssueController {
       topicFilter,
     });
   }
-
   static async updateIndustryIssueSave(req, res) {
     const {
       id,
