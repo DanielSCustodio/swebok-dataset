@@ -3,11 +3,9 @@ const SwebokTopic = require("../models/SwebokTopic");
 
 module.exports.checkTopic = async function (req, res, next) {
   const { chapterSelect, topicSelect } = req.body;
-  let alert = false;
 
   const chapter = await SwebokChpater.findAll({ raw: true });
   const topic = await SwebokTopic.findAll({ raw: true });
-
   const chapterSelected = await SwebokChpater.findOne({
     raw: true,
     where: { Description: chapterSelect },
@@ -19,8 +17,41 @@ module.exports.checkTopic = async function (req, res, next) {
   });
 
   if (topicSelected.SwebokChapterId !== chapterSelected.id) {
-    alert = true;
+    let alert = true;
     return res.render("industryissue/create", { alert, chapter, topic });
   }
+  next();
+};
+
+module.exports.checkSearch = async function (req, res, next) {
+  const { type, question, area, topic } = req.body;
+
+  const message = "Minimum of 3 characters required.";
+
+  if (!type && !question && !area && !topic) {
+    let emptyFields = true;
+    return res.render("industryissue/search", { emptyFields });
+  }
+
+  if (area.length >= 1 && area.length <= 2) {
+    let checkArea = message;
+    return res.render("industryissue/search", { checkArea });
+  }
+
+  if (topic.length >= 1 && topic.length <= 2) {
+    let checkTopic = message;
+    return res.render("industryissue/search", { checkTopic });
+  }
+
+  if (type.length >= 1 && type.length <= 2) {
+    let checkType = message;
+    return res.render("industryissue/search", { checkType });
+  }
+
+  if (question.length >= 1 && question.length <= 2) {
+    let checkQuestion = message;
+    return res.render("industryissue/search", { checkQuestion });
+  }
+
   next();
 };

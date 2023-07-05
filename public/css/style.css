@@ -188,7 +188,8 @@ ul {
 }
 
 .alert {
-  color: #df3812;
+  font-size: 1rem;
+  color: #de5638;
   text-transform: none;
   font-weight: 400;
 }
@@ -254,6 +255,10 @@ ul {
 }
 .form-control input::placeholder, .form-control textarea::placeholder, .form-control select::placeholder {
   color: rgba(255, 255, 255, 0.3098039216);
+}
+
+.validation input::placeholder {
+  color: #de5638;
 }
 
 .container-form-view {

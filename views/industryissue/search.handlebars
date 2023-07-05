@@ -1,30 +1,33 @@
-<section class='default-container'>
-  <h1 class='title'>Search Industry Issue</h1>
-  <div class='container-search container-search-center'>
-    <form action='/industryissue/search' class='form' method='POST'>
-      <div class='form-control'>
+<section class="default-container">
+  <h1 class="title">Search Industry Issue</h1>
+  {{#if emptyFields}}
+    <span class="alert">Blank fields. Please complete at least one field.</span>
+  {{/if}}
+  <div class="container-search container-search-center">
+    <form action="/industryissue/search" class="form" method="POST">
+      <div class="form-control validation">
         <label>Swebok Area:</label>
-        <input type='text' name='area' />
+        <input type="text" name="area" placeholder="{{checkArea}}" />
       </div>
-      <div class='form-control'>
+      <div class="form-control validation">
         <label>Topic:</label>
-        <input type='text' name='topic' />
-      </div>  
-      <div class='form-control'>
+        <input type="text" name="topic" placeholder="{{checkTopic}}" />
+      </div>
+      <div class="form-control validation">
         <label>Type:</label>
-        <input type='text' name='type' />
+        <input type="text" name="type" placeholder="{{checkType}}" />
       </div>
-      <div class='form-control'>
+      <div class="form-control validation">
         <label>Question:</label>
-        <input type='text' name='question' />
+        <input type="text" name="question" placeholder="{{checkQuestion}}" />
       </div>
-      <input type='submit' value='Search' class='btn' />
+      <input type="submit" value="Search" class="btn" />
     </form>
   </div>
-  <div class='default-container-item'>
-    <div class='default-container-buttons'>
+  <div class="default-container-item">
+    <div class="default-container-buttons">
       {{#if industryIssue}}
-        <table class='table'>
+        <table class="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -45,8 +48,8 @@
                 <td>{{this.Description}}</td>
                 <td>{{this.File}}</td>
                 <td>{{this.Claiment}}</td>
-                <td><a href='/industryissue/{{this.id}}'><i
-                      class='bi bi-search'
+                <td><a href="/industryissue/{{this.id}}"><i
+                      class="bi bi-search"
                     ></i></a></td>
               </tr>
             {{/each}}
@@ -57,9 +60,9 @@
 
   </div>
   {{#if industryIssue}}
-    <a href='/industryissue/search' class='btn'>Clear</a>
+    <a href="/industryissue/search" class="btn">Clear</a>
   {{/if}}
   {{#if notFound}}
-    <h6 class='title'>No Results</h6>
+    <h6 class="title">No Results</h6>
   {{/if}}
 </section>
