@@ -15,15 +15,16 @@
   th
     background-color: variables.$bg-second-color
     color: variables.$primary-color
-    
+
+  td
+    @include base-mixins.smartphone
+      text-align: left
 
   tr:nth-child(odd)
     background-color: variables.$table-bg-color
 
   tr:nth-child(even)
     background-color: variables.$bg-second-color
-
-
 
   i
     transition: .8s

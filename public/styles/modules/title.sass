@@ -1,5 +1,6 @@
 @use '../base/variables'
 @use '../layouts/mixins'
+@use '../base/base-mixins'
 
 .title
   font-size: 1.5rem
@@ -8,9 +9,16 @@
   margin-bottom: 2rem
   text-transform: capitalize
 
+  @include base-mixins.smartphone
+    font-size: 1.3rem
+
+
 .title-pages
   font-size: 2rem
   color: variables.$text-color
+
+  @include base-mixins.smartphone
+    font-size: 1.5rem
 
 .alert
   font-size: 1rem

@@ -2,7 +2,6 @@
 @use '../layouts/mixins'
 @use '../base/base-mixins'
 
-
 .default-container
   @include mixins.center-content()
   flex-direction: column
@@ -11,8 +10,18 @@
     width: 100%
     margin: 0 auto
     display: flex
-    align-items:  baseline
+    align-items: baseline
     justify-content: space-between
+
+    #search-mobile
+      display: none
+
+      @include base-mixins.smartphone
+        display: inline
+
+    #search
+      @include base-mixins.smartphone
+        display: none
 
   &-buttons
     width: 100%
@@ -32,10 +41,26 @@
   @include mixins.center-content()
   padding-top: 0
 
-.default-container-title 
+.default-container-title
   @include mixins.center-content()
   padding-top: variables.$top-distance
-  margin-bottom: 2rem 
+  margin-bottom: 2rem
+
+  @include base-mixins.tablet
+    padding-top: variables.$top-distance-mobile
+
+  @include base-mixins.smartphone
+    padding-top: 7rem
+
+  #back-mobile
+    display: none
+
+    @include base-mixins.smartphone
+      display: inline
+
+  #back
+    @include base-mixins.smartphone
+      display: none
 
   button
     color: variables.$primary-color
@@ -46,5 +71,3 @@
     &:hover
       cursor: pointer
       color: variables.$text-color
-
-
