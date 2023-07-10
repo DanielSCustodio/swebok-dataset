@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: localhost    Database: teste_swebok
+-- Host: localhost    Database: swebok
 -- ------------------------------------------------------
 -- Server version	8.0.33-0ubuntu0.20.04.2
 
@@ -44,7 +44,7 @@ CREATE TABLE `Evidence` (
 
 LOCK TABLES `Evidence` WRITE;
 /*!40000 ALTER TABLE `Evidence` DISABLE KEYS */;
-INSERT INTO `Evidence` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01','Teste 01','Teste 01','Teste 01',_binary 'Teste 01','2023-07-01 19:32:49','2023-07-01 19:32:49');
+INSERT INTO `Evidence` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01','Teste 01','Teste 01','Teste 01',_binary 'Teste 01','2023-07-10 19:35:31','2023-07-10 19:42:28');
 /*!40000 ALTER TABLE `Evidence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,15 +63,15 @@ CREATE TABLE `Industry_Issues` (
   `File` blob,
   `Claiment` varchar(200) NOT NULL,
   `SwebokChapterId` int DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
+  `createdAt` date NOT NULL,
+  `updatedAt` date NOT NULL,
   `SwebokTopicId` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `SwebokChapterId` (`SwebokChapterId`),
   KEY `SwebokTopicId` (`SwebokTopicId`),
   CONSTRAINT `Industry_Issues_ibfk_1` FOREIGN KEY (`SwebokChapterId`) REFERENCES `Swebok_Chapters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Industry_Issues_ibfk_2` FOREIGN KEY (`SwebokTopicId`) REFERENCES `Swebok_Topics` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `Industry_Issues` (
 
 LOCK TABLES `Industry_Issues` WRITE;
 /*!40000 ALTER TABLE `Industry_Issues` DISABLE KEYS */;
-INSERT INTO `Industry_Issues` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01s','Teste 01',2,'2023-07-01 19:31:57','2023-07-01 19:34:28',9),(2,'Teste 02','Teste 02',_binary 'Teste 02',_binary 'Teste 02','Teste 02',1,'2023-07-01 19:52:02','2023-07-01 19:52:02',2);
+INSERT INTO `Industry_Issues` VALUES (1,'Teste 01','Teste 01',_binary 'Teste 01',_binary 'Teste 01','Teste 01',1,'2023-07-10','2023-07-10',2);
 /*!40000 ALTER TABLE `Industry_Issues` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +104,7 @@ CREATE TABLE `Issue_Evidences` (
   KEY `EvidenceId` (`EvidenceId`),
   CONSTRAINT `Issue_Evidences_ibfk_1` FOREIGN KEY (`IndustryIssueId`) REFERENCES `Industry_Issues` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `Issue_Evidences_ibfk_2` FOREIGN KEY (`EvidenceId`) REFERENCES `Evidence` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `Issue_Evidences` (
 
 LOCK TABLES `Issue_Evidences` WRITE;
 /*!40000 ALTER TABLE `Issue_Evidences` DISABLE KEYS */;
-INSERT INTO `Issue_Evidences` VALUES (1,_binary 'Teste 01',_binary 'Teste 01','2023-07-01','2023-07-01 19:34:14',1,1),(2,_binary 'Teste 02',_binary 'Teste 02','2023-07-01','2023-07-01 19:52:12',2,1);
+INSERT INTO `Issue_Evidences` VALUES (1,_binary 'Teste 01',_binary 'Teste 01','2023-07-10','2023-07-10 19:36:14',1,1);
 /*!40000 ALTER TABLE `Issue_Evidences` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,11 +173,11 @@ INSERT INTO `Swebok_Topics` VALUES (1,'1.1. Software Requirements Fundamentals',
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'teste_swebok'
+-- Dumping events for database 'swebok'
 --
 
 --
--- Dumping routines for database 'teste_swebok'
+-- Dumping routines for database 'swebok'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -189,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-03 12:44:57
+-- Dump completed on 2023-07-10 16:43:59
