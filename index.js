@@ -46,7 +46,7 @@ app.use('/sweboktopic', SwebokTopicRoutes);
 app.use('/industryissue', IndustryIssueRoutes);
 app.use('/evidence', EvidenceRoutes);
 app.use("/issueevidence", IssueEvidenceRoutes);
-app.get('/', async (req, res) => {
+app.get('/', async (_req, res) => {
   const chapters = await SwebokChapter.findAll({ raw: true });
 
   res.render('swebokchapter/dashboard', { chapters });

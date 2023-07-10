@@ -222,7 +222,7 @@ ul {
 
 .alert {
   font-size: 1rem;
-  color: #de5638;
+  color: #524c4c;
   text-transform: none;
   font-weight: 400;
 }
@@ -296,12 +296,23 @@ ul {
   color: #429df2;
   text-transform: uppercase;
 }
+@media (max-width: 720px) {
+  .form-control label {
+    font-size: 0.8rem;
+  }
+}
 .form-control input, .form-control textarea, .form-control select {
   padding: 1rem;
   width: 85%;
   border-radius: 6px;
   background-color: #429df2 !important;
   color: #f9f9f9;
+}
+@media (max-width: 720px) {
+  .form-control input, .form-control textarea, .form-control select {
+    width: 75%;
+    padding: 0.8rem;
+  }
 }
 .form-control input:disabled, .form-control textarea:disabled, .form-control select:disabled {
   background-color: #dfdfdf !important;
@@ -312,7 +323,7 @@ ul {
 }
 
 .validation input::placeholder {
-  color: #de5638;
+  color: #524c4c;
 }
 
 .container-form-view {
