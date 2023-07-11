@@ -77,3 +77,19 @@
     </table>
   {{/if}}
 </div>
+
+<div class="container-form-view">
+  <div class="table-mobile">
+      {{#each industryIssue.Issue_Evidences}}
+        <div class="table-mobile-item">
+          <p><b>ID: </b> {{this.id}}</p>
+          <p><b>Date: </b>{{this.createdAt}}</p>
+          <p><b>Annotation: </b>{{this.Annotation}}</p>
+          <div class="actions">
+            <p> <a href="/evidence/{{this.EvidenceId}}"><i class="bi bi-search"></i></a></p>
+            <p> <a href="/evidence/{{this.EvidenceId}}"><i class="bi bi-pen"></i></a></p>
+          </div>
+        </div>
+      {{/each}}
+  </div>
+</div>
