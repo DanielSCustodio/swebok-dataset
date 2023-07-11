@@ -57,6 +57,10 @@ ul {
   margin: 0;
 }
 
+@page {
+  size: A4 portrait;
+  margin: 10;
+}
 #footer {
   background-color: #3198bd;
   padding: 2rem 0;
@@ -353,6 +357,11 @@ ul {
   border-collapse: collapse;
   border-bottom: 1px solid rgba(66, 216, 242, 0.2588235294);
 }
+@media (max-width: 720px) {
+  .table {
+    display: none;
+  }
+}
 .table th, .table td {
   padding: 1rem;
   text-align: justify;
@@ -360,11 +369,6 @@ ul {
 .table th {
   background-color: #dfdfdf;
   color: #429df2;
-}
-@media (max-width: 720px) {
-  .table td {
-    text-align: left;
-  }
 }
 .table tr:nth-child(odd) {
   background-color: #d4d2d2;
@@ -379,6 +383,35 @@ ul {
 .table i:hover {
   cursor: pointer;
   color: #429df2;
+}
+
+.table-mobile {
+  display: none;
+}
+@media (max-width: 720px) {
+  .table-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.table-mobile-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(66, 216, 242, 0.2588235294);
+  padding: 1rem;
+  background-color: #d4d2d2;
+  border-radius: 6px;
+}
+.table-mobile-item p {
+  margin-bottom: 1rem;
+}
+.table-mobile-item div {
+  display: flex;
+  gap: 1rem;
+}
+.table-mobile-item:nth-child(even) {
+  background-color: #dfdfdf;
 }
 
 .default-container {

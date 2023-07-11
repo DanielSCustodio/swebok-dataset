@@ -2,11 +2,14 @@
 @use '../layouts/mixins'
 @use '../base/base-mixins'
 
-.table
+.table 
   max-width: variables.$container-width
   width: 100%
   border-collapse: collapse
   border-bottom: 1px solid variables.$border-color
+
+  @include base-mixins.smartphone
+    display: none
 
   th, td
     padding: 1rem
@@ -15,10 +18,6 @@
   th
     background-color: variables.$bg-second-color
     color: variables.$primary-color
-
-  td
-    @include base-mixins.smartphone
-      text-align: left
 
   tr:nth-child(odd)
     background-color: variables.$table-bg-color
@@ -32,3 +31,29 @@
     &:hover
       cursor: pointer
       color: variables.$primary-color
+
+.table-mobile
+  display: none
+
+  @include base-mixins.smartphone
+    display: flex
+    flex-direction: column
+    width: 100%
+
+.table-mobile-item
+  margin-bottom: 1rem
+  border-bottom: 1px solid variables.$border-color
+  padding: 1rem
+  background-color: variables.$table-bg-color
+  border-radius: variables.$radius
+
+  p
+    margin-bottom: 1rem
+
+  div
+    display: flex
+    gap: 1rem
+
+  &:nth-child(even)
+    background-color: variables.$bg-second-color
+

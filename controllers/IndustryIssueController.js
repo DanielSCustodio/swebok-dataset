@@ -135,6 +135,9 @@ module.exports = class IndustryIssueController {
         const footer = document.querySelector("#footer");
         const addNewEvidenceButton = document.querySelector("#add-new-evidence");
         const backButton = document.querySelector("#back");
+        const back = document.querySelector("#back-mobile");
+        const actions = document.querySelectorAll(".actions");
+
 
         exportButton.parentNode.removeChild(exportButton);
         navbar.parentNode.removeChild(navbar);
@@ -142,10 +145,15 @@ module.exports = class IndustryIssueController {
         editButton.parentNode.removeChild(editButton);
         addNewEvidenceButton.parentNode.removeChild(addNewEvidenceButton);
         backButton.parentNode.removeChild(backButton);
+        back.parentNode.removeChild(back);
+        actions.forEach((element) => {
+          element.parentNode.removeChild(element);
+        });
       });
 
       const pdfOptions = {
         format: "A4",
+        printBackground: true,
       };
 
       const pdfBuffer = await page.pdf(pdfOptions);
