@@ -231,6 +231,10 @@ ul {
   font-weight: 400;
 }
 
+.no-results {
+  color: #cb3131;
+}
+
 @media (max-width: 720px) {
   .default-container-buttons {
     flex-direction: row-reverse;
