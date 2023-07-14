@@ -27,4 +27,16 @@
     {{/each}}
   </tbody>
 </table>
+<div class="container-form-view">
+  <div class="table-mobile">
+    {{#each chapters}}
+      <div class="table-mobile-item">
+        <p><b>Number: </b>{{this.id}}</p>
+        <p><b>Chapter: </b>{{this.Description}}</p>
+        <div class="actions">
+          <p><a href="/swebokchapter/{{this.id}}"><i class="bi bi-search"></i></a></p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </section>

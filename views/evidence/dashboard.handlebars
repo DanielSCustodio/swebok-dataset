@@ -56,7 +56,34 @@
     </table>
   {{else}}
     {{#unless checkSearch}}
-        <h6 class="title">No Results</h6>
+      <h6 class="title">No Results</h6>
     {{/unless}}
   {{/if}}
 </section>
+<div class="container-form-view">
+  <div class="table-mobile">
+    {{#each evidence}}
+      <div class="table-mobile-item">
+        <p><b>ID: </b>{{this.id}}</p>
+        <p><b>Description: </b>{{this.Description}}</p>
+        <p><b>Title: </b>{{this.Title}}</p>
+        <p><b>Authors: </b>{{this.Authors}}</p>
+        <p><b>Abstract: </b>{{this.Abstract}}</p>
+        <p><b>KeyWords: </b>{{this.KeyWords}}</p>
+        <p><b>DOINnumber: </b>{{this.DOINnumber}}</p>
+        <p><b>Link: </b>{{this.Link}}</p>
+        <p><b>File: </b>{{this.File}}</p>
+        <div class="actions">
+          <p>
+            <a href="/evidence/{{this.id}}"><i
+                class="bi bi-search"
+              ></i></a></p>
+          <p>
+            <a href="/evidence/edit/{{this.id}}"><i
+                class="bi bi-pen"
+              ></i></a></p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
