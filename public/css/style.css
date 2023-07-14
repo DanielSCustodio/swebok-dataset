@@ -231,6 +231,10 @@ ul {
   font-weight: 400;
 }
 
+.no-results {
+  color: #cb3131;
+}
+
 @media (max-width: 720px) {
   .default-container-buttons {
     flex-direction: row-reverse;
@@ -423,6 +427,7 @@ ul {
   align-items: center;
   padding: 0 1rem;
   flex-direction: column;
+  width: 100%;
 }
 @media (max-width: 912px) {
   .default-container {
@@ -514,6 +519,7 @@ ul {
   align-items: center;
   padding: 0 1rem;
   padding-top: 0;
+  width: 100%;
 }
 @media (max-width: 912px) {
   .container-topic-list {
