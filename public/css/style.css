@@ -339,6 +339,7 @@ ul {
   padding: 0 1rem;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 @media (max-width: 912px) {
   .container-form-view {
