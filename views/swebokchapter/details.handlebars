@@ -1,34 +1,40 @@
-<section class='container-view'>
-  <h1 class='title'>{{chapter.id}}. {{chapter.Description}}</h1>
-</section>
-<section class="container-topic-list">
-  <table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Topics</th>
-      <th>View</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each chapter.Swebok_Topics}}
-    <tr>
-      <td>{{this.id}}</td>
-      <td>{{this.Description}}</td>
-      <td><a href="/sweboktopic/{{this.id}}"><i class="bi bi-search"></i></a></td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-</section>
-{{!-- <section class='container-topic'>
- <h2 class='title'>Topics</h2>
-  <form action='/sweboktopic/add' method='POST' class='form'>
-    <input type='hidden' name='SwebokChapterId' value='{{chapter.id}}' />
-    <div class='form-control'>
-      <input type='text' name='Description' placeholder='Create topic' />
+<section class="default-container">
+  <section class='container-view'>
+    <h1 class='title'>{{chapter.id}}. {{chapter.Description}}</h1>
+  </section>
+  <section class="container-topic-list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Topics</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each chapter.Swebok_Topics}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.Description}}</td>
+          <td><a href="/sweboktopic/{{this.id}}"><i class="bi bi-search"></i></a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+  <div class="container-form-view">
+    <div class="table-mobile">
+      {{#each chapter.Swebok_Topics}}
+        <div class="table-mobile-item">
+          <p><b>ID: </b>{{this.id}}</p>
+          <p><b>Topics: </b>{{this.Description}}</p>
+          <div class="actions">
+            <p><a href="/sweboktopic/{{this.id}}"><i class="bi bi-search"></i></a></p>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    <input type='submit' value='Create' class='btn' />
-  </form>
-</section> --}}
+  </div> 
+</section>
+
 
